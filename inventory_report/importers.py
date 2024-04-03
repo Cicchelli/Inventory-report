@@ -36,7 +36,7 @@ class JsonImporter(Importer):
 
 class CsvImporter(Importer):
     def import_data(self) -> list[Product]:
-        with open(self.path, "r") as file:
+        with open(self.path, "r", encoding="utf-8") as file:
             csv_data = csv.DictReader(file)
             products = []
             for item in csv_data:
