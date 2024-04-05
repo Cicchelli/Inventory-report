@@ -1,8 +1,12 @@
+"""Function printing python version."""
+
 from dataclasses import dataclass
 
 
 @dataclass
 class Product:
+    """Class representing a person"""
+
     id: str
     product_name: str
     company_name: str

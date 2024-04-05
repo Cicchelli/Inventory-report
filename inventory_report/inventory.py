@@ -1,9 +1,13 @@
+"""Function printing python version."""
+
 from typing import List, Optional
 
 from inventory_report.product import Product
 
 
 class Inventory:
+    """Class representing a person"""
+
     def __init__(self, data: Optional[List[Product]] = None) -> None:
         self._data: List[Product] = data if data else []
 

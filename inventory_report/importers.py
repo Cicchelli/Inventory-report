@@ -1,3 +1,5 @@
+"""Function printing python version."""
+
 import csv
 import json
 from abc import ABC, abstractmethod
@@ -7,6 +9,8 @@ from inventory_report.product import Product
 
 
 class Importer(ABC):
+    """Class representing a person"""
+
     def __init__(self, path: str) -> None:
         self.path = path
 
@@ -16,6 +20,8 @@ class Importer(ABC):
 
 
 class JsonImporter(Importer):
+    """Class representing a person"""
+
     def import_data(self) -> list[Product]:
         with open(self.path, "r") as file:
             json_data = json.load(file)
@@ -35,6 +41,8 @@ class JsonImporter(Importer):
 
 
 class CsvImporter(Importer):
+    """Class representing a person"""
+
     def import_data(self) -> list[Product]:
         with open(self.path, "r", encoding="utf-8") as file:
             csv_data = csv.DictReader(file)
